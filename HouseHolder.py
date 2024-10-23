@@ -26,10 +26,12 @@ def orthogonalisation(mat: np.ndarray):
 
     return q, mat
 
-# m = int(input("Enter no. of Rows (m) of the Matrix: "))
-# n = int(input("Enter no. of Columns (n) of the Matrix: "))
+m = int(input("Enter no. of Rows (m) of the Matrix: "))
+n = int(input("Enter no. of Columns (n) of the Matrix: "))
 
-# matrix = np.array([list(map(float, input(f"Enter the Row {i + 1} (space-separated): ").split())) for i in range(m)])
+matrix = np.array([list(map(float, input(f"Enter the Row {i + 1} (space-separated): ").split())) for i in range(m)])
 
-q, r = orthogonalisation(np.array([[1, -4],[2, 3],[2, 2]]))
-print(q, r, q @ r, sep="\n\n")
+q, r = orthogonalisation(matrix)
+
+print("\nQ : \n", q, "\nR : \n", r, "\nQ*R : \n", (q@r))
+
